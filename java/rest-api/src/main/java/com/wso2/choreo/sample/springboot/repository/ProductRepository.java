@@ -3,11 +3,6 @@ package com.wso2.choreo.sample.springboot.repository;
 import com.wso2.choreo.sample.springboot.model.Product;
 import org.springframework.stereotype.Repository;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Repository;
-
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -25,7 +20,7 @@ public class ProductRepository {
     }
 
     public Map<Integer, Product> getAllProducts() {
-        logger.info("MongoDB URI: {}", mongoDbUri);
+        System.out.println("MongoDB URI: {}", mongoDbUri);
         return map;
     }
 
