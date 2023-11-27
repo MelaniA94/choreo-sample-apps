@@ -1,13 +1,12 @@
 package com.wso2.choreo.sample.springboot.repository;
 
 import com.wso2.choreo.sample.springboot.model.Product;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 @Component
 public class YourComponent {
@@ -15,13 +14,12 @@ public class YourComponent {
     @Value("${spring.data.uri}")
     private String userInfoUri;
 
+    // Other components of your class...
 }
 
-
 @Repository
-public class ProductRepository {
+class ProductRepository {
     private Map<Integer, Product> map = new ConcurrentHashMap<>();
-
 
     public ProductRepository() {
         map.put(1, new Product(1, "product 1", 10, 1000));
@@ -31,7 +29,6 @@ public class ProductRepository {
 
     public Map<Integer, Product> getAllProducts() {
         return map;
-        
     }
 
     public Product findById(int id) {
@@ -54,3 +51,4 @@ public class ProductRepository {
         return copy;
     }
 }
+
