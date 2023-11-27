@@ -6,12 +6,21 @@ import org.springframework.stereotype.Repository;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class YourComponent {
+
+    @Value("${spring.data.uri}")
+    private String userInfoUri;
+
+}
+
+
 @Repository
 public class ProductRepository {
     private Map<Integer, Product> map = new ConcurrentHashMap<>();
-
- @Value("${spring.data.uri}")
- String userInfoUri;
 
 
     public ProductRepository() {
