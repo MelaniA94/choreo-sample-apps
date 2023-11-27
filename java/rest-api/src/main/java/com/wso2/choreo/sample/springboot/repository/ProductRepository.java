@@ -10,6 +10,10 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ProductRepository {
     private Map<Integer, Product> map = new ConcurrentHashMap<>();
 
+ @Value("${spring.data.uri}")
+ String userInfoUri;
+
+
     public ProductRepository() {
         map.put(1, new Product(1, "product 1", 10, 1000));
         map.put(2, new Product(2, "product 2", 20, 2000));
