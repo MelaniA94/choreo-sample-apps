@@ -20,7 +20,7 @@ public class ProductRepository {
     }
 
     public Map<Integer, Product> getAllProducts() {
-        System.out.println("MongoDB URI: {}", mongoDbUri);
+        //System.out.println("MongoDB URI: {}", mongoDbUri);
         return map;
     }
 
