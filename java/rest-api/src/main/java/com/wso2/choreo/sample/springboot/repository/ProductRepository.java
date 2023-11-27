@@ -8,9 +8,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Repository
 public class ProductRepository {
-
-    @Value("${spring.data.uri}")
-    private String mongoDbUri;
     private Map<Integer, Product> map = new ConcurrentHashMap<>();
 
     public ProductRepository() {
@@ -20,8 +17,8 @@ public class ProductRepository {
     }
 
     public Map<Integer, Product> getAllProducts() {
-        //System.out.println("MongoDB URI: {}", mongoDbUri);
         return map;
+        
     }
 
     public Product findById(int id) {
