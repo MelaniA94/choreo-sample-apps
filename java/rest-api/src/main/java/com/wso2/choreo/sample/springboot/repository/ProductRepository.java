@@ -17,8 +17,7 @@ public class ProductRepository {
     }
 
     public Map<Integer, Product> getAllProducts() {
-       logger.info("getAllProducts method called. Returning products.");
-
+    System.out.println("getAllProducts method called. Returning products.");
         return map;
     }
 
